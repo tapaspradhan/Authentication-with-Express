@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Register Form</title>
+</head>
+<body>
+    <div class="mainContainer" >
+        <header>
+            <h1 class="registerText">Register Here</h1>
+        </header>
+        <div class="signupForm">
+            <form class="formBox" action="#">
+                    <label for="name">Enter Your Name</label>
+                    <input id="name" type="text" placeholder="Your Name">
+                    <label for="email">Enter Your Email</label>
+                    <input id="email" type="email" placeholder="Your Email">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Enter Password">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" type="password" placeholder="Enter Confirm Password">
+                </form>
+                <div class="submitBtn">
+                    <button id="registerBtn" class="signUpBtn">Sign Up</button>
+                </div>
+                <div class="footerBtn">
+                <a href="./forgotPassword.html" class="forgotPasswordBtn">Forgot Password?</a>
+                <a href="./login.html" class="loginBtn">Login</a> 
+            </div>
+        </div>
+    </div>
+
+    <script src="./signup.js"></script>
+</body>
+</html>
