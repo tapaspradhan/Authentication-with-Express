@@ -5,3 +5,11 @@
 - In register form I store the data in MONGODB database.
 - password and confirm password check.
 - 
+
+# Backend
+
+- A user register through POST method 
+- I use POST,GET, USE method from express
+- Database connect with MONGODB using mongoose 
+- Mongoose use also schema modeling which is store in mongodb database.
+- 
