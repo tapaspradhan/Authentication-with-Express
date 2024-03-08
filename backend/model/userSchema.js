@@ -1,5 +1,6 @@
 const mongoogse=require("mongoose")
 const {Schema}=mongoogse
+const JWT=require("jsonwebtoken")
 
 const userSchema=new Schema({
     name:{
@@ -29,6 +30,16 @@ const userSchema=new Schema({
 },{
     timestamps:true
 })
+
+userSchema.method={
+    jwtToken(){
+        return JWT.sign(
+            {id: this._id, email:this.email},
+            process.env.SECRET,
+            {expriesIn:"24h"}
+        )
+    }
+}
 
 const userModel=mongoogse.model("user",userSchema)
 
