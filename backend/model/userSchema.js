@@ -1,6 +1,7 @@
 const mongoogse=require("mongoose")
 const {Schema}=mongoogse
 const JWT=require("jsonwebtoken")
+const bcrypt=require("bcrypt")
 
 const userSchema=new Schema({
     name:{
@@ -31,7 +32,15 @@ const userSchema=new Schema({
     timestamps:true
 })
 
-userSchema.method={
+userSchema.pre("save", async function(next){
+    if(!this.isModified("password")){
+        return next();
+    }
+    this.password=await bcrypt.hash(this.password, 10)
+    return next()
+})
+
+userSchema.methods={
     jwtToken(){
         return JWT.sign(
             {id: this._id, email:this.email},
